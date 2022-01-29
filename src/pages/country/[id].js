@@ -34,13 +34,15 @@ const Country = ({ countries }) => {
   }, []);
 
   return (
-    <Layout title={countries[0]?.name?.offical}>
+    <Layout title={countries[0]?.name?.official}>
       {countries.map((country) => (
         <div className={styles.container} key={country.cca3}>
           <div className={styles.container_left}>
             <div className={styles.overview_panel}>
-              <img src={country.flags.png} alt={country?.name?.offical} />
-              <h1 className={styles.overview_name}>{country?.name?.offical}</h1>
+              <img src={country.flags.png} alt={country?.name?.official} />
+              <h1 className={styles.overview_name}>
+                {country?.name?.official}
+              </h1>
               <div className={styles.overview_region}>{country.region}</div>
 
               <div className={styles.overview_numbers}>
@@ -85,7 +87,7 @@ const Country = ({ countries }) => {
               <div className={styles.details_panel_row}>
                 <div className={styles.details_panel_label}>Native name</div>
                 <div className={styles.details_panel_value}>
-                  {country?.name?.offical}
+                  {country?.name?.official}
                 </div>
               </div>
               <div className={styles.details_panel_row}>
